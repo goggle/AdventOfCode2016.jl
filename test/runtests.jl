@@ -13,3 +13,7 @@ end
     @test AdventOfCode2016.Day02.day02(sample) == [1985, "5DB3"]
     @test AdventOfCode2016.Day02.day02() == [61529, "C2C28"]
 end
+
+@testset "Day 3" begin
+    @test AdventOfCode2016.Day03.day03() == [1032, 1838]
+end
