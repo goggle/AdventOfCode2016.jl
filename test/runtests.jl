@@ -26,3 +26,7 @@ end
     @test AdventOfCode2016.Day04.decrypt("qzmt-zixmtkozy-ivhz", 343) == "very encrypted name"
     @test AdventOfCode2016.Day04.day04() == [185371, 984]
 end
+
+@testset "Day 5" begin
+    @test AdventOfCode2016.Day05.day05() == ["4543c154", "1050cbbd"]
+end
