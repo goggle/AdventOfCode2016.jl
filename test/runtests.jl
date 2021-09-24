@@ -30,3 +30,24 @@ end
 @testset "Day 5" begin
     @test AdventOfCode2016.Day05.day05() == ["4543c154", "1050cbbd"]
 end
+
+@testset "Day 6" begin
+    sample = "eedadn\n" *
+             "drvtee\n" *
+             "eandsr\n" *
+             "raavrd\n" *
+             "atevrs\n" *
+             "tsrnev\n" *
+             "sdttsa\n" *
+             "rasrtv\n" *
+             "nssdts\n" *
+             "ntnada\n" *
+             "svetve\n" *
+             "tesnvt\n" *
+             "vntsnd\n" *
+             "vrdear\n" *
+             "dvrsen\n" *
+             "enarar\n"
+    @test AdventOfCode2016.Day06.day06(sample) == ["easter", "advent"]
+    @test AdventOfCode2016.Day06.day06() == ["umcvzsmw", "rwqoacfz"]
+end
