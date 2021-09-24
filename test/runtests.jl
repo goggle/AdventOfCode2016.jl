@@ -17,3 +17,12 @@ end
 @testset "Day 3" begin
     @test AdventOfCode2016.Day03.day03() == [1032, 1838]
 end
+
+@testset "Day 4" begin
+    @test AdventOfCode2016.Day04.is_real("aaaaa-bbb-z-y-x-123[abxyz]") == true
+    @test AdventOfCode2016.Day04.is_real("a-b-c-d-e-f-g-h-987[abcde]") == true
+    @test AdventOfCode2016.Day04.is_real("not-a-real-room-404[oarel]") == true
+    @test AdventOfCode2016.Day04.is_real("totally-real-room-200[decoy]") == false
+    @test AdventOfCode2016.Day04.decrypt("qzmt-zixmtkozy-ivhz", 343) == "very encrypted name"
+    @test AdventOfCode2016.Day04.day04() == [185371, 984]
+end
