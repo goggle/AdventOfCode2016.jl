@@ -28,7 +28,9 @@ end
 end
 
 @testset "Day 5" begin
-    @test AdventOfCode2016.Day05.day05() == ["4543c154", "1050cbbd"]
+    sample = "abc"
+    @test AdventOfCode2016.Day05.part1(sample, len=2) == "18"
+    @test AdventOfCode2016.Day05.part2(sample, len=2) == "05"
 end
 
 @testset "Day 6" begin
