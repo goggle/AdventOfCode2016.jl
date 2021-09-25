@@ -67,3 +67,34 @@ end
 
     @test AdventOfCode2016.Day07.day07() == [110, 242]
 end
+
+@testset "Day 8" begin
+    screen = zeros(Bool, 3, 7)
+    res1 = [1 1 1 0 0 0 0;
+            1 1 1 0 0 0 0;
+            0 0 0 0 0 0 0]
+    AdventOfCode2016.Day08.rect!(screen, 3, 2)
+    @test screen == res1
+    res2 = [1 0 1 0 0 0 0;
+            1 1 1 0 0 0 0;
+            0 1 0 0 0 0 0]
+    AdventOfCode2016.Day08.rotd!(screen, 1+1, 1)
+    @test screen == res2
+    res3 = [0 0 0 0 1 0 1;
+            1 1 1 0 0 0 0;
+            0 1 0 0 0 0 0]
+    AdventOfCode2016.Day08.rotr!(screen, 0+1, 4)
+    @test screen == res3
+    res4 = [0 1 0 0 1 0 1;
+            1 0 1 0 0 0 0;
+            0 1 0 0 0 0 0]
+    AdventOfCode2016.Day08.rotd!(screen, 1+1, 1)
+    @test screen == res4
+    image = " ██  ████ █    ████ █     ██  █   █████  ██   ███ \n" *
+            "█  █ █    █    █    █    █  █ █   ██    █  █ █    \n" *
+            "█    ███  █    ███  █    █  █  █ █ ███  █    █    \n" *
+            "█    █    █    █    █    █  █   █  █    █     ██  \n" *
+            "█  █ █    █    █    █    █  █   █  █    █  █    █ \n" *
+            " ██  █    ████ ████ ████  ██    █  █     ██  ███  \n"
+    @test AdventOfCode2016.Day08.day08() == [106, image]
+end
