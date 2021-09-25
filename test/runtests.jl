@@ -51,3 +51,17 @@ end
     @test AdventOfCode2016.Day06.day06(sample) == ["easter", "advent"]
     @test AdventOfCode2016.Day06.day06() == ["umcvzsmw", "rwqoacfz"]
 end
+
+@testset "Day 7" begin
+    @test AdventOfCode2016.Day07.supports_tls("abba[mnop]qrst") == true
+    @test AdventOfCode2016.Day07.supports_tls("abcd[bddb]xyyx") == false
+    @test AdventOfCode2016.Day07.supports_tls("aaaa[qwer]tyui") == false
+    @test AdventOfCode2016.Day07.supports_tls("ioxxoj[asdfgh]zxcvbn") == true
+
+    @test AdventOfCode2016.Day07.supports_ssl("aba[bab]xyz") == true
+    @test AdventOfCode2016.Day07.supports_ssl("xyx[xyx]xyx") == false
+    @test AdventOfCode2016.Day07.supports_ssl("aaa[kek]eke") == true
+    @test AdventOfCode2016.Day07.supports_ssl("zazbz[bzb]cdb") == true
+
+    @test AdventOfCode2016.Day07.day07() == [110, 242]
+end
