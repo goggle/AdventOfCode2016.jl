@@ -122,3 +122,8 @@ end
 @testset "Day 12" begin
     @test AdventOfCode2016.Day12.day12() == [318009, 9227663]
 end
+
+@testset "Day 13" begin
+    @test AdventOfCode2016.Day13.solve(10, 7, 4) == [11, 151]
+    @test AdventOfCode2016.Day13.day13() == [92, 124]
+end
