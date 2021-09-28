@@ -10,6 +10,8 @@ end
 
 function solve(input::AbstractString, n_additional::Int)
     producers = Int[]
+
+    # TODO: Use circular buffer instead of a dictionary
     lookup = Dict{Int,AbstractString}()
     i = 0
     while length(producers) < 64
