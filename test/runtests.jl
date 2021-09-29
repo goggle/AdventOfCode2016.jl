@@ -132,3 +132,8 @@ end
     @test AdventOfCode2016.Day14.solve("abc", 0) == 22728
     @test AdventOfCode2016.Day14.solve("abc", 100) == 25661
 end
+
+@testset "Day 19" begin
+    @test AdventOfCode2016.Day19.day19("5") == [3, 2]
+    @test AdventOfCode2016.Day19.day19() == [1815603, 1410630]
+end
