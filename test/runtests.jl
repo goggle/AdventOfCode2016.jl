@@ -137,3 +137,7 @@ end
     @test AdventOfCode2016.Day19.day19("5") == [3, 2]
     @test AdventOfCode2016.Day19.day19() == [1815603, 1410630]
 end
+
+@testset "Day 20" begin
+    @test AdventOfCode2016.Day20.day20() == [4793564, 146]
+end
