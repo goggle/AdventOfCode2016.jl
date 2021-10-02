@@ -3,7 +3,7 @@ module AdventOfCode2016
 using BenchmarkTools
 using Printf
 
-solvedDays = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 12, 13, 14, 19, 20]
+solvedDays = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 12, 13, 14, 19, 20, 21]
 
 # Include the source files:
 for day in solvedDays
