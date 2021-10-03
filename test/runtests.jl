@@ -157,3 +157,7 @@ end
     @test AdventOfCode2016.Day21.run("decab", rev_sample_instructions) == "abcde"
     @test AdventOfCode2016.Day21.day21() == ["dbfgaehc", "aghfcdeb"]
 end
+
+@testset "Day 22" begin
+    @test AdventOfCode2016.Day22.day22() == [941, 249]
+end
