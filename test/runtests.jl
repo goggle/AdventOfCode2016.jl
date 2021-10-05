@@ -161,3 +161,17 @@ end
 @testset "Day 22" begin
     @test AdventOfCode2016.Day22.day22() == [941, 249]
 end
+
+@testset "Day 24" begin
+    sample = "###########\n" *
+             "#0.1.....2#\n" *
+             "#.#######.#\n" *
+             "#4.......3#\n" *
+             "###########\n"
+    samplemaze = vcat([x' for x in collect.(split(rstrip(sample)))]...)
+    sampledistances = AdventOfCode2016.Day24.calculate_distance_matrix(samplemaze)
+    @test AdventOfCode2016.Day24.shortest_distance(sampledistances) == 14
+    @test AdventOfCode2016.Day24.shortest_distance(sampledistances, return_to_zero = true) == 20
+
+    @test AdventOfCode2016.Day24.day24() == [412, 664]
+end
