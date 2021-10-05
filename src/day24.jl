@@ -15,10 +15,7 @@ end
 
 function shortest_distance(distances::OffsetMatrix{Int, Matrix{Int}}; return_to_zero = false)
     shortest_distance = sum(distances)
-    m = size(distances)[1]-1
-    a = collect(0:m)
-    deleteat!(a, a .== 0)
-    for perm in permutations(a)
+    for perm in permutations(1:size(distances)[1]-1)
         prev = 0
         dist = 0
         if return_to_zero
@@ -39,9 +36,9 @@ end
 function calculate_distance_matrix(maze::Matrix{Char})
     destinds = get_destination_indices(maze)
     m = length(destinds) - 1
-    dists = []
+    dists = Vector{OffsetArrays.OffsetVector{Int, Vector{Int}}}(undef, m+1)
     for i = 0:m
-        push!(dists, calculate_distances(maze, i, destinds))
+        dists[i+1] = calculate_distances(maze, i, destinds)
     end
     return OffsetArray(vcat(dists'...), 0:m, 0:m)
 end
