@@ -25,25 +25,14 @@ end
 
 function calculate_safe_tiles!(stiles::Matrix{Bool})
     nrows, ncols = size(stiles)
+    # the rule of being a trap simplifies to
+    # left XOR right
     for i = 2:nrows
-        for j = 1:ncols
-            istrap = false
-            if j == 1
-                left = true
-            else
-                left = stiles[i-1,j-1]
-            end
-            center = stiles[i-1,j]
-            if j == ncols
-                right = true
-            else
-                right = stiles[i-1, j+1]
-            end
-            if (!left && !center && right) || (left && !center && !right) || (!left && center && right) || (left && center && !right)
-                istrap = true
-            end
-            stiles[i,j] = !istrap
+        stiles[i, 1] = !(true ⊻ stiles[i-1, 2])
+        for j = 2:ncols-1
+            stiles[i,j] = !(stiles[i-1,j-1] ⊻ stiles[i-1,j+1])
         end
+        stiles[i, ncols] = !(stiles[i-1, ncols-1] ⊻ true)
     end
 end
 
