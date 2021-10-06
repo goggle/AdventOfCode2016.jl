@@ -133,6 +133,19 @@ end
     @test AdventOfCode2016.Day14.solve("abc", 100) == 25661
 end
 
+@testset "Day 16" begin
+    @test AdventOfCode2016.Day16.generate_data(BitVector([1]), 3) == BitVector([1, 0, 0])
+    @test AdventOfCode2016.Day16.generate_data(BitVector([0]), 3) == BitVector([0, 0, 1])
+    @test AdventOfCode2016.Day16.generate_data(BitVector([1, 1, 1, 1, 1]), 11) == BitVector([1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0])
+    @test AdventOfCode2016.Day16.generate_data(BitVector([1, 1, 1, 1, 0, 0, 0, 0, 1, 0, 1, 0]), 25) == BitVector([1, 1, 1, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1, 1, 1, 1, 0, 0, 0, 0])
+    @test AdventOfCode2016.Day16.calculate_checksum(BitVector([1, 1, 0, 0, 1, 0, 1, 1, 0, 1, 0, 0]), 12) == "100"
+    a = BitVector([1, 0, 0, 0, 0])
+    data = AdventOfCode2016.Day16.generate_data(a, 20)
+    @test AdventOfCode2016.Day16.calculate_checksum(data, 20) == "01100"
+
+    @test AdventOfCode2016.Day16.day16() == ["10010100110011100", "01100100101101100"]
+end
+
 @testset "Day 19" begin
     @test AdventOfCode2016.Day19.day19("5") == [3, 2]
     @test AdventOfCode2016.Day19.day19() == [1815603, 1410630]
