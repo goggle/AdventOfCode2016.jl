@@ -146,6 +146,17 @@ end
     @test AdventOfCode2016.Day16.day16() == ["10010100110011100", "01100100101101100"]
 end
 
+@testset "Day 17" begin
+    @test AdventOfCode2016.Day17.find_path("ihgpwlah") == "DDRRRD"
+    @test AdventOfCode2016.Day17.find_path("kglvqrro") == "DDUDRLRRUDRD"
+    @test AdventOfCode2016.Day17.find_path("ulqzkmiv") == "DRURDRUDDLLDLUURRDULRLDUUDDDRR"
+    @test AdventOfCode2016.Day17.find_path("ihgpwlah"; shortest_path = false) == 370
+    @test AdventOfCode2016.Day17.find_path("kglvqrro"; shortest_path = false) == 492
+    @test AdventOfCode2016.Day17.find_path("ulqzkmiv"; shortest_path = false) == 830
+
+    @test AdventOfCode2016.Day17.day17() == ["DURLDRRDRD", 650]
+end
+
 @testset "Day 19" begin
     @test AdventOfCode2016.Day19.day19("5") == [3, 2]
     @test AdventOfCode2016.Day19.day19() == [1815603, 1410630]
