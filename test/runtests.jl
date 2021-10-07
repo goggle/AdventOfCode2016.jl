@@ -133,6 +133,13 @@ end
     @test AdventOfCode2016.Day14.solve("abc", 100) == 25661
 end
 
+@testset "Day 15" begin
+    sample = "Disc #1 has 5 positions; at time=0, it is at position 4.\n" *
+             "Disc #2 has 2 positions; at time=0, it is at position 1.\n"
+    @test AdventOfCode2016.Day15.day15(sample) == [5, 85]
+    @test AdventOfCode2016.Day15.day15() == [317371, 2080951]
+end
+
 @testset "Day 16" begin
     @test AdventOfCode2016.Day16.generate_data(BitVector([1]), 3) == BitVector([1, 0, 0])
     @test AdventOfCode2016.Day16.generate_data(BitVector([0]), 3) == BitVector([0, 0, 1])
