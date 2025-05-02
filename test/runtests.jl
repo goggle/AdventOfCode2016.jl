@@ -202,15 +202,7 @@ end
 end
 
 @testset "Day 23" begin
-    sample = "cpy 2 a\n" *
-             "tgl a\n" *
-             "tgl a\n" *
-             "tgl a\n" *
-             "cpy 1 a\n" *
-             "dec a\n" *
-             "dec a\n"
-    registers, code = AdventOfCode2016.Day23.parse_and_initialize_registers(sample, 0, 0, 0, 0)
-    @test AdventOfCode2016.Day23.run!(registers, code) == 3
+    @test AdventOfCode2016.Day23.day23() == [10880, 479007440]
 end
 
 @testset "Day 24" begin
